@@ -1,0 +1,78 @@
+//	GRID
+// Created on : 19.01.2017, 11:56:31
+//   Author     : ss
+.container {
+    margin: 0 auto;
+    max-width: 71rem;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.row {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.col {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: darken(@base-gray, 10%);
+    border: 1px solid black;
+}
+
+@media screen and(max-width: 45rem){ //720 при 16px
+	.col {
+        &.col-one-fourth {
+        width: 100%;
+        }
+        &.col-two-fourth {
+            width: 100%;
+        }
+        &.col-three-fourth{
+            width: 100%;
+        }
+        &.col-full {
+            width: 100%;
+        }
+    }   
+}
+@media screen and (min-width: 45rem) and (max-width: 75rem){ // от 720 до 1200 при 16 зx
+    .col {
+        &.col-one-fourth {
+            width: 25%;
+        }
+        &.col-two-fourth {
+            width: 50%;
+        }
+        &.col-three-fourth{
+            width: 75%;
+        }
+        &.col-full {
+            width: 100%;
+        }
+    }
+
+}
+@media screen and (min-width: 75rem){ // от 1200 при 16px
+    .col {
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background: darken(@base-gray, 10%);
+        border: 1px solid black;
+        &.col-one-fourth {
+            width: 25%;
+        }
+        &.col-two-fourth {
+            width: 50%;
+        }
+        &.col-three-fourth{
+            width: 75%;
+        }
+        &.col-full {
+            width: 100%;
+        }
+    }
+}
+
