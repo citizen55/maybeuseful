@@ -1,0 +1,37 @@
+/*right=panel*/
+.search {
+   margin-top: 3rem;
+    & input[type="text"] {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 2rem;
+        display: inline-block;
+        float: left;
+        vertical-align: middle;
+    }
+    & button[type="submit"] {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-left: -2rem;
+        display: inline-block;
+        line-height: 2rem;
+    }
+}
+@media screen and(max-width: 45rem){ //720 при 16px
+    .third-party-block {
+        max-width: 75%;
+        padding: 1rem 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 45rem){
+    .third-party-block {
+        max-width: 100%;
+        padding: 0;
+        margin: 1rem auto;
+    }
+}
+
+

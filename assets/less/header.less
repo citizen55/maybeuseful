@@ -1,0 +1,84 @@
+@height-header: 5rem;
+//@line-height-header: @height-header - 2rem;
+
+.header {
+    background-color: @base-blue;
+    height: @height-header;
+    box-shadow: 0 0.375rem 0.2rem 0 darken(@base-gray, 10%);
+    overflow: hidden;
+    &:before {
+        .before-middle;
+    }
+    & p {
+        display: inline-block;
+        color: @base-white;
+        &.logo {
+            font-style: italic;
+            font-family: @font-family-serif;
+        }
+    }
+}
+
+@media screen and(max-width: 45rem){
+   .header {
+        & p {
+            &.logo {
+                font-size: 1rem;
+                text-shadow: 0 0 0.125rem white, 0 0 0.25rem black, 0 0 0.5rem white, 0 0 1rem white, 0 0 1.25rem white, 0 0 1.5rem white;
+            }
+        }
+    } 
+}
+
+@media screen and(min-width: 45rem){
+    .header {
+        & p {
+            &.logo {
+                font-size: 1.5rem;
+               text-shadow: 0 0 0.25rem white, 0 0 0.5rem black, 0 0 1rem white, 0 0 1.25rem white, 0 0 2rem white, 0 0 2.5rem white;
+            }
+        }
+    }
+}
+.logo-text {
+   margin-left: -1rem;
+}
+.tool-panel {
+    height: 100%;
+    &:before {
+        .before-middle;  
+    }
+}
+
+.toggle-day-night-box {
+    display: inline-block;
+    position: relative;
+    width: 3.5rem;
+    height: 2rem;
+    //line-height: @line-height-header;
+    background-color: lighten(@base-blue, 10%);
+    border: 2px solid @base-white;
+    border-radius: 1rem;
+    box-shadow: inset 2px 2px 0 2px fade(@base-black, 30%);
+    margin: 0 0.25rem;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.toggle-day-night-lever {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid @base-blue;
+    box-shadow: 2px 2px 0 1px fade(@base-black, 30%);
+    background-color: @base-white;
+    top: 0.125rem; left: 0.125rem;
+}
+.toggle-day-night-guide {
+    position: absolute;
+    top: 1rem-1/4rem ; left: 0.5rem;
+    width: 2rem;
+    height: 1/4rem;
+    background-color: @base-black;
+    border-radius: 1/8rem;
+}

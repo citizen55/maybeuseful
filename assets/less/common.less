@@ -7,6 +7,8 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
   font-size: @font-size-html;
@@ -57,6 +59,9 @@ a {
   }
 }
 
+ul {
+    list-style: none;
+}
 // Figures
 // We reset this here because previously Normalize had no `figure` margins. This
 // ensures we don't break anyone's use of the element.
@@ -101,4 +106,29 @@ hr {
 
 .clearfix {
   *zoom: 1;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+h2 {
+    font-size: 1.25rem;
+    margin: 1.25/1.5rem;
+}
+h3 {
+    font-size: 1.125rem;
+    margin: 1.125/1.5rem;
+}
+h4 {
+    font-size: 1rem;
+    margin: 1/1.5rem;
+}
+h5 {
+    font-size: 0.875rem;
+    margin: 0.875/1.5rem;
+}
+h6 {
+    font-size: 0.75rem;
+    margin: 0.75/1.5rem;
 }

@@ -3,6 +3,8 @@
 //    Author     : ss
 
 //Color
+@base-blue-rgba: rgba(0, 120, 220, 1);
+
 @base-blue:		#0078dc;
 @base-white:	#ffffff;
 @base-gray:		#e6e6e6;
@@ -13,8 +15,8 @@
 @font-family-serif:			"Times New Roman", Times, serif;
 @font-weight:					400;
 @font-size-html:				16px; //1rem для расчета размеров отступов и другое
-@font-size-body:				14px; // для текстового содержимого
-@font-size-small:				12px;
+@font-size-body:				@font-size-html*0.875; // для текстового содержимого
+@font-size-small:				@font-size-html*0.75;
 
 @line-height-html: @font-size-html * 1.5;
 @line-height-body:  @font-size-body * 1,5;
@@ -25,3 +27,5 @@
 
 @link-color: @text-color;
 @link-hover-color: @link-color;
+
+@box-shadow: 0.2rem 0.1rem 0.1rem 0.125rem fade(darken(@base-gray, 25%), 60%);

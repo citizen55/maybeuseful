@@ -12,39 +12,200 @@
 </head>
 <body>
     <div class="container">
-        <header class="">
-            Заголовок страницы
-        </header>
-        <nav class="">
-
-        </nav>
-        <main>
-            <div class="row clearfix">
-                <div class="col col-one-fourth">one-fourth</div>
-                <div class="col col-three-fourth">tree-fourth</div>
+        <div class="row clearfix">
+            <header class="header col col-full">
+                <i class="icon ico_notebook mobile-hidden"></i>
+                <p class="logo">Может пригодиться</p>
+<!--                <i class="icon ico_text-head logo-text mobile-hidden"></i>-->
+                <div class="tool-panel right">
+                    <div class="inline-block mobile-hidden">
+                        <i class="icon ico_avatar va-middle"></i>
+                        <p> Гость </p> <i class="white-space-2rem"></i>
+                        <i class="icon ico_login pointer"></i>
+                        <p class="pointer">Войти</p>
+                        <i class="white-space-4rem"></i>
+                    </div> 
+                    <div class="inline-block">
+                        <i class="icon ico_sun"></i>
+                        <div class="toggle-day-night-box">
+                           <div class="toggle-day-night-guide"></div>
+                           <div class="toggle-day-night-lever"></div>
+                        </div>
+                        <i class="icon ico_moon"></i>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <nav class="main-menu">
+                <ul>
+                    <li class="">
+                        <a href="#">
+                        <i class="icon ico_dump"></i>
+                        Все в кучу
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="icon ico_netbeans"></i>
+                           Netbeans  
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon ico_paper"></i>
+                            Шпаргалки
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon ico_moon"></i>
+                            Inkscape
+                        </a>
+                    </li>
+                    <li><a href="#">Другое</a></li> 
+                </ul>
+            </nav> 
+        </div>
+        <div class="row clearfix">
+             <div class="col col-one-third opposite">
+                <div class="search mobile-hidden">
+                    <form action="/" method="get">
+                        <input type="text" placeholder="Поиск" required>
+                        <button type="submit"><i class="icon ico_search"></i></button> 
+                    </form>
+                </div>
+                <div class="third-party-block">
+                    <img src="image/template.jpg">
+                </div>
             </div>
-            <div class="row clearfix">
-                <div class="col col-one-fourth">one-fourth</div>
-                <div class="col col-three-fourth">tree-fourth</div>
+            <div class="col col-two-third">
+                <ul class="breadcrumbs mobile-hidden">
+                    <li>Netbeans</li>
+                    <li>Расширения</li>
+                    <li>Темы</li>
+                    <li>Darcula</li>
+                </ul>
+                <main class="m-margin-top-2">
+                    <article>
+                        <h3>Yii2 Application Development Cookbook</h3>
+                        <div class="row clearfix">
+                            <div class="col col-one-fourth">
+                                <div class="thumb">
+                                    <img src="image/yii.jpg" alt="yii">
+                                </div>
+                            </div>
+                            <div class="col col-three-fourth">
+                                <ul class="article-info">
+                                    <li>
+                                        <i class="icon ico_category"></i>
+                                        <a href="#"> Категория </a>
+                                    </li>
+                                    <li>
+                                        <i class="icon ico_category"></i>
+                                           Дата публикации
+                                    </li>
+                                </ul>
+                                <p>
+                                    Те, кто следит за судьбой PHP и Yii, вероятно заметили в новостях Yii2, предновогоднем PHP-дайджесте на Habrahabr и в блоге RMCreative Александра Макарова о выходе новой редакции популярной книги практических рецептов Yii Development Cookbook, переписанной в этот раз на Yii2.
+                                </p>
+                                <a class="read-more">Читать далее...</a>
+                            </div>
+                        </div>
+                    </article><!-- Коментарии пользователей так же могут быть в article-->
+                    <article>
+                         <h3>Yii2 Application Development Cookbook</h3>
+                        <div class="row clearfix">
+                            <div class="col col-one-fourth">
+                                <div class="thumb">
+                                    <img src="image/yii.jpg" alt="yii">
+                                </div>
+                            </div>
+                            <div class="col col-three-fourth">
+                                <ul class="article-info">
+                                    <li>
+                                        <i class="icon ico_category"></i>
+                                        <a href="#"> Категория </a>
+                                    </li>
+                                    <li>
+                                        <i class="icon ico_category"></i>
+                                           Дата публикации
+                                    </li>
+                                </ul>
+                                <p>
+                                    Те, кто следит за судьбой PHP и Yii, вероятно заметили в новостях Yii2, предновогоднем PHP-дайджесте на Habrahabr и в блоге RMCreative Александра Макарова о выходе новой редакции популярной книги практических рецептов Yii Development Cookbook, переписанной в этот раз на Yii2.
+                                </p>
+                                <a class="read-more">Читать далее...</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                        <h3>Yii2 Application Development Cookbook</h3>
+                        <div class="row clearfix">
+                            <div class="col col-one-fourth">
+                                <div class="thumb">
+                                    <img src="image/yii.jpg" alt="yii">
+                                </div>
+                            </div>
+                            <div class="col col-three-fourth">
+                                <ul class="article-info">
+                                    <li>
+                                        <i class="icon ico_category"></i>
+                                        <a href="#"> Категория </a>
+                                    </li>
+                                    <li>
+                                        <i class="icon ico_category"></i>
+                                           Дата публикации
+                                    </li>
+                                </ul>
+                                <p>
+                                    Те, кто следит за судьбой PHP и Yii, вероятно заметили в новостях Yii2, предновогоднем PHP-дайджесте на Habrahabr и в блоге RMCreative Александра Макарова о выходе новой редакции популярной книги практических рецептов Yii Development Cookbook, переписанной в этот раз на Yii2.
+                                </p>
+                                <a class="read-more">Читать далее...</a>
+                            </div>
+                        </div>
+                    </article>
+                </main> 
+                <div class="pagination-circle">
+                    <ul>
+                        <li><a href=""> << </a></li>
+                        <li><a href=""> < </a></li>
+                        <li><a href="" class="active"> 1 </a></li>
+                        <li><a href=""> 2 </a></li>
+                        <li class="ellipsis">...</li>
+                        <li><a href=""> 39 </a></li>
+                        <li><a href=""> 40 </a></li>
+                        <li><a href=""> > </a></li>
+                        <li><a href=""> >> </a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="row clearfix">
-                <div class="col col-two-fourth">two-fourth</div>
-                <div class="col col-two-fourth">two-fourth</div>
+            <!--right column-->
+            <div class="col col-one-third opposite">
+                <div class="third-party-block">
+                    <img src="image/yupe-business.jpg">
+                </div>
             </div>
-            <article>
-
-            </article><!-- Коментарии пользователей так же могут быть в article-->
-            <article></article>
-            <article></article>
-            <article></article>
-        </main>
-        <!--    боковой элемент, классы предварительные-->
-        <div class="right nav"></div>
-
-        <footer>
-
+        </div>
+        <footer class="row clearfix">
+            <div class="col col-one-fourth">
+                <p>© Ковтунов СА 2016-2017<br>
+                    Политика конфиденциальности <br>
+                    Email: mail@citizen-55.ru</p>
+            </div>
+            <div class="col col-two-fourth">
+                <p>
+                    Права на все материалы, опубликованные на сайте, принадлежат автору.
+                    Незаконное копирование материалов преследуется по закону.
+                    Использование материалов возможно лишь при наличии
+                    активной ссылки на источник. Использование материалов
+                </p>
+            </div>
+            <div class="col col-one-fourth">
+                
+            </div>
         </footer>
    </div>
 <!--<script src="/assets/js/main.js"></script>-->
 </body>
-</html>	
+</html>

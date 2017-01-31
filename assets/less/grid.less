@@ -14,17 +14,25 @@
 }
 
 .col {
+    //border: 1px solid black;
     float: left;
     padding-left: 1rem;
     padding-right: 1rem;
-    background: darken(@base-gray, 10%);
-    border: 1px solid black;
+    &.col-full {
+        width: 100%;
+    }
+    &.opposite {
+        float:  right;
+    }
 }
-
 @media screen and(max-width: 45rem){ //720 при 16px
 	.col {
         &.col-one-fourth {
-        width: 100%;
+            width: 100%;
+            & .thumb {
+                max-width: 50%;
+                margin: 1rem auto;
+            }
         }
         &.col-two-fourth {
             width: 100%;
@@ -35,7 +43,20 @@
         &.col-full {
             width: 100%;
         }
-    }   
+        &.col-one-third {
+            width: 100%;
+            & .thumb {
+                max-width: 50%;
+                margin: 1rem auto;
+            }
+        }
+        &.col-two-third {
+            width: 100%;
+        }
+    } 
+    .mobile-hidden {
+        display: none;
+    }
 }
 @media screen and (min-width: 45rem) and (max-width: 75rem){ // от 720 до 1200 при 16 зx
     .col {
@@ -48,8 +69,11 @@
         &.col-three-fourth{
             width: 75%;
         }
-        &.col-full {
-            width: 100%;
+        &.col-one-third {
+            width: 33.3%;
+        }
+        &.col-two-third {
+            width: 66.7%;
         }
     }
 }
@@ -66,6 +90,12 @@
         }
         &.col-full {
             width: 100%;
+        }
+        &.col-one-third {
+            width: 33.3%;
+        }
+        &.col-two-third {
+            width: 66.7%;
         }
     }
 }

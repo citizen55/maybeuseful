@@ -1,0 +1,25 @@
+/*footer*/
+footer {
+    background-color: @base-blue;
+    color: @base-white;
+    padding: 1rem 0;
+    text-align: justify;
+
+}
+@media screen and(max-width: 45rem){ //720 при 16px
+    & .col-one-fourth, & .col-two-fourth {
+        border-bottom: 1px solid @base-white;
+        & p {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: 45rem){
+    .footer {
+        & .col-one-fourth, & .col-two-fourth {
+            border-right: 1px solid @base-white;
+        }
+    } 
+}

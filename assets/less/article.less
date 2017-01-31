@@ -1,0 +1,39 @@
+/*article*/
+article {
+    margin-top: 1.5rem;
+    & h1, & h2, & h3 {
+        color: darken(@base-blue, 10%);;
+        text-align: center;
+    }
+    .article-info {
+        margin-bottom: 1rem;
+        & li {
+            display: inline-block;
+            &:before {
+                .before-middle;
+            }
+            & a {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            & .icon {
+                vertical-align: middle;
+            }
+        }
+    }
+    & p {
+        text-indent: 1.5rem;
+        padding: 0.5rem 0;
+    }
+    & a.read-more {
+        padding: 0.25rem 0.5rem;
+        background-color: @base-blue;
+        color:  @base-white;
+        border-radius: 0.5rem;
+        box-shadow: @box-shadow;
+        cursor: pointer;
+        &:hover {
+            background-color: darken(@base-blue, 5%);
+        }
+    }
+}
