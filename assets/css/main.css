@@ -645,7 +645,6 @@ h6 {
 }
 .tool-panel {
   height: 100%;
-  margin-right: 6rem;
 }
 .tool-panel:before {
   content: '';
