@@ -8,10 +8,19 @@
 	<meta name="keywords" content=""> <!-- для поисковиков, заполнять программно, нужно ли? не знаю-->
 	<title>Может пригодиться. Главная</title>
     <link rel="stylesheet" href="/assets/css/main.css">
+<!--    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">-->
 <!--    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">-->
+    
 </head>
-<body>
+<body class="night">
+    <input type="checkbox" id="toggle-day-night" class="toggle-day-night">
     <div class="container">
+<!--        necessarily .label-toggle-dn must be first child .container-->
+        <label class="label-toggle-dn">  
+            <span class="toglle-dn-box">
+                <span class="toggle-lever"></span>
+            </span>
+        </label>
         <div class="row clearfix">
             <header class="header col col-full">
                 <i class="icon ico_notebook mobile-hidden"></i>
@@ -25,19 +34,15 @@
                         <p class="pointer">Войти</p>
                         <i class="white-space-4rem"></i>
                     </div> 
-                    <div class="inline-block">
-                        <i class="icon ico_sun"></i>
-                        <div class="toggle-day-night-box">
-                           <div class="toggle-day-night-guide"></div>
-                           <div class="toggle-day-night-lever"></div>
-                        </div>
-                        <i class="icon ico_moon"></i>
-                    </div>
                 </div>
             </header>
         </div>
         <div class="row">
             <nav class="main-menu">
+                <label for="nav-toggle">
+                    <span class="nav-button"></span>
+                </label>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
                 <ul>
                     <li class="">
                         <a href="#">
@@ -45,13 +50,13 @@
                         Все в кучу
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="#">
                             <i class="icon ico_netbeans"></i>
                            Netbeans  
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#">
                             <i class="icon ico_paper"></i>
                             Шпаргалки
@@ -64,6 +69,19 @@
                         </a>
                     </li>
                     <li><a href="#">Другое</a></li> 
+                    <li class="mobile nav-divide"></li>
+                    <li class="mobile">
+                        <a href="#">
+                            <i class="icon ico_avatar"></i>
+                           Профиль 
+                        </a>
+                    </li>
+                    <li class="mobile">
+                         <a href="#">
+                            <i class="icon ico_avatar"></i>
+                           Войти 
+                        </a>
+                    </li>
                 </ul>
             </nav> 
         </div>
@@ -206,6 +224,8 @@
             </div>
         </footer>
    </div>
-<!--<script src="/assets/js/main.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

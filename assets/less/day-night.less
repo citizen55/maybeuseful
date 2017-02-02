@@ -1,0 +1,61 @@
+/*day-night*/
+.toggle-day-night {
+    display: none;
+}
+.label-toggle-dn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+}
+.toglle-dn-box {
+    display: inline-block;
+    &:before {
+        display: inline-block;
+        content: '';
+        .ico_sun;
+        vertical-align: middle;
+    }
+    &:after {
+        display: inline-block;
+        content: '';
+        .ico_moon;
+        vertical-align: middle;
+    }
+}
+.toggle-lever {
+    display: inline-block;
+    position: relative;
+    width: 3.5rem;
+    height: 2rem;
+    background-color: lighten(@base-blue, 10%);
+    border: 2px solid @base-white;
+    border-radius: 1rem;
+    box-shadow: inset 0.125rem 0.125rem 0 0.0625rem fade(@base-black, 30%);
+    margin: 0 0.25rem;
+    cursor: pointer;
+    vertical-align: middle;
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 1rem-1/4rem ; left: 0.5rem;
+        width: 2rem;
+        height: 1/4rem;
+        background-color: @base-black;
+        border-radius: 1/8rem;
+    }
+    &:after {
+        content: '';
+        direction: block;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 0.75rem;
+        border: 0.0625rem solid @base-blue;
+        box-shadow: 0.125rem 0.125rem 0 0.0625rem fade(@base-black, 30%);
+        background-color: @base-white;
+        top: 0.125rem; left: 0.125rem;
+    }
+}
+
+
