@@ -252,7 +252,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #000;
+  color: inherit;
   text-decoration: none;
 }
 a:hover,
@@ -535,6 +535,18 @@ h6 {
   }
 }
 /*day-night*/
+.night {
+  background-color: #323232;
+  color: #ffffff;
+}
+.night h1,
+.night h2,
+.night h3,
+.nighth4,
+.night h5,
+.night h6 {
+  color: #c8c8ff;
+}
 .toggle-day-night {
   display: none;
 }
@@ -675,6 +687,9 @@ h6 {
   background-color: #ffffff;
   top: 0.125rem;
   left: 0.125rem;
+}
+.toggle-day-night-lever.night {
+  left: 1.625rem;
 }
 .toggle-day-night-guide {
   position: absolute;

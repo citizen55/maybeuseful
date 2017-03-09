@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content=""> <!-- для поисковиков, заполнять программно, нужно ли? не знаю-->
+	<meta name="keywords" content=""> <!-- для поисковиков, заполнять программно, нужно ли? не знаю-->
+	<title>Может пригодиться. Главная</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+<!--    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">-->
+<!--    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">-->
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <header class="header col col-full">
+                <i class="icon ico_notebook mobile-hidden"></i>
+                <p class="logo">Может пригодиться</p>
+<!--                <i class="icon ico_text-head logo-text mobile-hidden"></i>-->
+                <div class="tool-panel right">
+                    <div class="inline-block mobile-hidden">
+                        <i class="icon ico_avatar va-middle"></i>
+                        <p> Гость </p> <i class="white-space-2rem"></i>
+                        <i class="icon ico_login pointer"></i>
+                        <p class="pointer">Войти</p>
+                        <i class="white-space-4rem"></i>
+                    </div> 
+                    <div class="inline-block">
+                        <i class="icon ico_sun"></i>
+                        <div class="toggle-day-night-box">
+                           <div class="toggle-day-night-guide"></div>
+                           <div class="toggle-day-night-lever"></div>
+                        </div>
+                        <i class="icon ico_moon"></i>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <nav class="main-menu">
+                <label for="nav-toggle">
+                    <span class="nav-button"></span>
+                </label>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+                <ul>
+                    <li class="">
+                        <a href="#">
+                        <i class="icon ico_dump"></i>
+                        Все в кучу
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#">
+                            <i class="icon ico_netbeans"></i>
+                           Netbeans  
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="icon ico_paper"></i>
+                            Шпаргалки
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon ico_moon"></i>
+                            Inkscape
+                        </a>
+                    </li>
+                    <li><a href="#">Другое</a></li> 
+                    <li class="mobile nav-divide"></li>
+                    <li class="mobile">
+                        <a href="#">
+                            <i class="icon ico_avatar"></i>
+                           Профиль 
+                        </a>
+                    </li>
+                    <li class="mobile">
+                         <a href="#">
+                            <i class="icon ico_avatar"></i>
+                           Войти 
+                        </a>
+                    </li>
+                </ul>
+            </nav> 
+        </div>
+        <div class="row clearfix">
+             <div class="col col-one-third opposite">
+                <div class="search mobile-hidden">
+                    <form action="/" method="get">
+                        <input type="text" placeholder="Поиск" required>
+                        <button type="submit"><i class="icon ico_search"></i></button> 
+                    </form>
+                </div>
+                <div class="third-party-block">
+                    <img src="">
+                </div>
+            </div>
+            <div class="col col-two-third">
+                <ul class="breadcrumbs mobile-hidden">
+                    <li>Netbeans</li>
+                    <li>Расширения</li>
+                    <li>Темы</li>
+                    <li>Darcula</li>
+                </ul>
+                <main class="m-margin-top-2">
+                    <div id="barba-wrapper">
+                        <div class="barba-container">
+                            ...Put here the content you wish to change between pages...
+                             <div>
+            <p>Как-то давно у меня спрашивали, как сделать хранение пользовательского контента в разных базах данных, а недавно этот же вопрос всплыл на форуме вновь:</p>
+
+<p>Подскажите в общих чертах, как можно реализовать динамическое переключение между базами в зависимости от подключенного пользователя. То есть если залогинился пользователь User1, то подключиться к DB1, если User2 то к DB2.
+    Где такое может быть полезно? Например, если делаете у себя сервис для клиентов, где хотите, чтобы у каждой компании была своя отдельная база данных. Или если делаете мультисайтовость, когда в одной главной панели управляете товарами пяти своих интернет-магазинов. Мультисайтовость для разных хостингов лучше для безопасности и надёжности реализовывать через API, а не через открытие доступа к SQL серверу для всех или для своего главного IP-адреса. Но такие нюансы рассматривать не будем.</p>
+
+<p>Итак, реализуем поддержку нескольких подключений. При работе через свой Data Mapper можно передавать идентификатор пользователя прямо в методы репозитория:</p>
+
+<p>$post = $this->postsRepository->find($id, $userId);
+    $post->publish();
+$this->postsRepository->persist($post, $userId);
+и в него вписать всю логику того, какую базу данных для каждого запроса выбирать. Если используете полноценные ORM, то дальше можете статью не читать. Но задача усложняется при использовании ActiveRecord в том же Yii2 тем, что разные подключения можно указать методам запроса one($db) и all($db):</p>
+
+<p>$post = Post::find()->andWhere(['id' => $postId])->one(Yii::$app->db2);
+    и нельзя передавать другое подключение $db в присутствующие в ActiveRecord методы save, deleteAll и подобные, которые аргумент $db не принимают и полностью полагаются на свой статический метод:</p>
+
+<p>class ActiveRecord extends BaseActiveRecord
+{
+    public static function getDb()
+    {
+        return Yii::$app->getDb();
+    }
+    ...
+}
+и работают внутри только с этим единственным подключением static::getDb().
+
+Рассмотрим несколько вариантов переключения баз данных.
+
+Для демонстрации установим yii2-app-basic приложение и запустим команду:
+
+./yii migrate/create create_post_table --useTablePrefix=1 --fields=title:string
+./yii migrate
+чтобы создать и запустить миграцию:</p>
+
+<p>use yii\db\Migration;
+ 
+class m160826_073936_create_post_table extends Migration
+{
+    public function up()
+    {
+        $this->createTable('{{%post}}', [
+            'id' => $this->primaryKey(),
+            'title' => $this->string(),
+        ]);
+    }
+ 
+    public function down()
+    {
+        $this->dropTable('{{%post}}');
+    }
+}
+И добавим для этой таблицы модель:
+
+namespace app\models;
+ 
+use Yii;
+use yii\db\ActiveRecord;
+ 
+/**
+@property integer $id
+@property string $title
+ */
+class Post extends ActiveRecord
+{
+    public static function tableName()
+    {
+        return '{{%post}}';
+    }
+}
+Пользовательские посты будем хранить именно в персональных базах для каждого пользователя вроде этого:
+
+'components' => [
+    ...
+    'db' => [
+        'class' => 'yii\db\Connection',
+        'dsn' => 'mysql:host=localhost;dbname=site',
+        'username' => 'root',
+        'password' => '',
+        'charset' => 'utf8',
+    ],
+    'db_user_1' => [
+        'class' => 'yii\db\Connection',
+        'dsn' => 'mysql:host=localhost;dbname=user_1',
+        'username' => 'root',
+        'password' => '',
+        'charset' => 'utf8',
+    ],
+    ],</p>
+<p>Но такой пример с ручным объявлением db_user_1, db_user_2 для тысяч пользователей рассматривать не будем.
+
+Вместо этого можно объявить новое подключение userDb и определить его анонимной функцией:
+
+'components' => [
+    ...
+    'db' => [
+        'class' => 'yii\db\Connection',
+        'dsn' => 'mysql:host=localhost;dbname=site',
+        'username' => 'root',
+        'password' => '',
+        'charset' => 'utf8',
+    ],
+    'userDb' => function () {
+        if ($user = Yii::$app->get('user', false)) {
+            $userId = !$user->getIsGuest() ? $user->getId() : 0;
+        } else {
+            $userId = 0;
+        }
+        return Yii::createObject([
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=user_' . $userId,
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ]);
+    },
+],
+и переопределить метод getDb() на использование этого подключения:
+
+class Post extends ActiveRecord
+{
+    public static function getDb()
+    {
+        return Yii::$app->userDb;
+    }
+ 
+    ...
+}
+Это проще всего, но мы не сможем на лету подменить соединение, если администратор захочет посмотреть записи конкретного пользователя. И не сможем работать одновременно с базами нескольких пользователей.
+
+Можно накостылить и так:</p>
+
+                    </div>
+                        </div>
+                    </div>
+                                      
+                </main> 
+            </div>
+            <!--right column-->
+            <div class="col col-one-third opposite">
+                <div class="third-party-block">
+                    <img src="">
+                </div>
+            </div>
+        </div>
+        <footer class="row clearfix">
+            <div class="col col-one-fourth">
+                <p>© Ковтунов СА 2016-2017<br>
+                    Политика конфиденциальности <br>
+                    Email: mail@citizen-55.ru</p>
+            </div>
+            <div class="col col-two-fourth">
+                <p>
+                    Права на все материалы, опубликованные на сайте, принадлежат автору.
+                    Незаконное копирование материалов преследуется по закону.
+                    Использование материалов возможно лишь при наличии
+                    активной ссылки на источник. Использование материалов
+                </p>
+            </div>
+            <div class="col col-one-fourth">
+                
+            </div>
+        </footer>
+   </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/barba.min.js" type="text/javascript"></script>
+</body>
+</html>
+ 

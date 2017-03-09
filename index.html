@@ -31,7 +31,7 @@
                         <i class="icon ico_sun"></i>
                         <div class="toggle-day-night-box">
                            <div class="toggle-day-night-guide"></div>
-                           <div class="toggle-day-night-lever"></div>
+                           <div class="toggle-day-night-lever" id="lever"></div>
                         </div>
                         <i class="icon ico_moon"></i>
                     </div>
@@ -46,7 +46,7 @@
                 <input type="checkbox" id="nav-toggle" class="nav-toggle" />
                 <ul>
                     <li class="">
-                        <a href="#">
+                        <a href="/">
                         <i class="icon ico_dump"></i>
                         Все в кучу
                         </a>
@@ -106,7 +106,10 @@
                     <li>Darcula</li>
                 </ul>
                 <main class="m-margin-top-2">
-                    <article>
+                    <div id="barba-wrapper">
+                        <div class="barba-container">
+                            ...Put here the content you wish to change between pages...
+                            <article>
                         <h3>Yii2 Application Development Cookbook</h3>
                         <div class="row clearfix">
                             <div class="col col-one-fourth">
@@ -128,7 +131,7 @@
                                 <p>
                                     Те, кто следит за судьбой PHP и Yii, вероятно заметили в новостях Yii2, предновогоднем PHP-дайджесте на Habrahabr и в блоге RMCreative Александра Макарова о выходе новой редакции популярной книги практических рецептов Yii Development Cookbook, переписанной в этот раз на Yii2.
                                 </p>
-                                <a class="read-more">Читать далее...</a>
+                                <a class="read-more" href="html/article.html">Читать далее...</a>
                             </div>
                         </div>
                     </article><!-- Коментарии пользователей так же могут быть в article-->
@@ -184,6 +187,9 @@
                             </div>
                         </div>
                     </article>
+                        </div>
+                    </div>
+                        
                 </main> 
                 <div class="pagination-circle">
                     <ul>
@@ -228,5 +234,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
 <script src="/assets/js/main.js"></script>
+<!--<script src="/assets/js/dragLever.js"></script>-->
+<script src="assets/js/barba.js" type="text/javascript"></script>
 </body>
 </html>
